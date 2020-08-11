@@ -1,6 +1,8 @@
 [package]
 name = "npm-package-json"
+description = "A Rust library for parsing npm's `package.json` file."
 version = "0.0.0"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/SirWindfield/npm-package-json"
 authors = ["Sven Lechner <SirWindfield@users.noreply.github.com>"]
 edition = "2018"
