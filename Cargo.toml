@@ -6,3 +6,9 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/SirWindfield/npm-package-json"
 authors = ["Sven Lechner <SirWindfield@users.noreply.github.com>"]
 edition = "2018"
+
+[dependencies]
+semver = "0.10.0"
+serde = { version = "1.0.115", features = ["derive"] }
+serde_json = "1.0.57"
+thiserror = "1.0.20"
