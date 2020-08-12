@@ -13,7 +13,7 @@
 
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{collections::BTreeMap, fs, io::Read, path::Path, str::FromStr};
+use std::{collections::BTreeMap, fmt, fs, io::Read, path::Path, str::FromStr};
 
 mod error;
 
@@ -49,6 +49,17 @@ pub struct Person {
     pub email: Option<String>,
     /// The homepage of the person.
     pub url: Option<String>,
+}
+
+impl fmt::Display for Person {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match (&self.name, self.email.as_ref(), self.url.as_ref()) {
+            (name, Some(email), None) => write!(f, "{} <{}>", name, email),
+            (name, None, Some(url)) => write!(f, "{} ({})", name, url),
+            (name, None, None) => write!(f, "{}", name),
+            (name, Some(email), Some(url)) => write!(f, "{} <{}> ({})", name, email, url),
+        }
+    }
 }
 
 /// A reference to a person.
@@ -193,5 +204,21 @@ impl FromStr for Package {
     /// Deserializes a `Package` from a string.
     fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(serde_json::from_str(s)?)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::Person;
+
+    #[test]
+    fn test_person_display() {
+        let person = Person {
+            name: "John Doe".to_string(),
+            email: Some("john@doe.dev".to_string()),
+            url: Some("https://john.doe.dev".to_string()),
+        };
+        let expected = "John Doe <john@doe.dev> (https://john.doe.dev)";
+        assert_eq!(expected, person.to_string());
     }
 }
