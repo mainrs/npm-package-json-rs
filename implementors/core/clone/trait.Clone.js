@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl Clone for Bug","synthetic":false,"types":[]},{"text":"impl Clone for Person","synthetic":false,"types":[]},{"text":"impl Clone for PersonReference","synthetic":false,"types":[]},{"text":"impl Clone for ManReference","synthetic":false,"types":[]},{"text":"impl Clone for Repository","synthetic":false,"types":[]},{"text":"impl Clone for RepositoryReference","synthetic":false,"types":[]},{"text":"impl Clone for Package","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

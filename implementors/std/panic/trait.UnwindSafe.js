@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl UnwindSafe for Bug","synthetic":true,"types":[]},{"text":"impl UnwindSafe for Person","synthetic":true,"types":[]},{"text":"impl UnwindSafe for Repository","synthetic":true,"types":[]},{"text":"impl UnwindSafe for Package","synthetic":true,"types":[]},{"text":"impl !UnwindSafe for Error","synthetic":true,"types":[]},{"text":"impl UnwindSafe for PersonReference","synthetic":true,"types":[]},{"text":"impl UnwindSafe for ManReference","synthetic":true,"types":[]},{"text":"impl UnwindSafe for RepositoryReference","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

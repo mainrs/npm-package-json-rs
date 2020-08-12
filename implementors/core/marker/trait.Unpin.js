@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl Unpin for Bug","synthetic":true,"types":[]},{"text":"impl Unpin for Person","synthetic":true,"types":[]},{"text":"impl Unpin for Repository","synthetic":true,"types":[]},{"text":"impl Unpin for Package","synthetic":true,"types":[]},{"text":"impl Unpin for Error","synthetic":true,"types":[]},{"text":"impl Unpin for PersonReference","synthetic":true,"types":[]},{"text":"impl Unpin for ManReference","synthetic":true,"types":[]},{"text":"impl Unpin for RepositoryReference","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

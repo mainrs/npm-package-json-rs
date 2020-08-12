@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl Debug for Error","synthetic":false,"types":[]},{"text":"impl Debug for Bug","synthetic":false,"types":[]},{"text":"impl Debug for Person","synthetic":false,"types":[]},{"text":"impl Debug for PersonReference","synthetic":false,"types":[]},{"text":"impl Debug for ManReference","synthetic":false,"types":[]},{"text":"impl Debug for Repository","synthetic":false,"types":[]},{"text":"impl Debug for RepositoryReference","synthetic":false,"types":[]},{"text":"impl Debug for Package","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

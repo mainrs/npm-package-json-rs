@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl Sync for Bug","synthetic":true,"types":[]},{"text":"impl Sync for Person","synthetic":true,"types":[]},{"text":"impl Sync for Repository","synthetic":true,"types":[]},{"text":"impl Sync for Package","synthetic":true,"types":[]},{"text":"impl Sync for Error","synthetic":true,"types":[]},{"text":"impl Sync for PersonReference","synthetic":true,"types":[]},{"text":"impl Sync for ManReference","synthetic":true,"types":[]},{"text":"impl Sync for RepositoryReference","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

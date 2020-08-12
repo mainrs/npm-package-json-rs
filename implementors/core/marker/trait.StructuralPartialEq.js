@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["npm_package_json"] = [{"text":"impl StructuralPartialEq for Bug","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for Person","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for PersonReference","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for ManReference","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for Repository","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for RepositoryReference","synthetic":false,"types":[]},{"text":"impl StructuralPartialEq for Package","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
