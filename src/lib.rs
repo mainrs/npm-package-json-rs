@@ -1,6 +1,8 @@
 //! `serde` mappings for npm's `package.json` file format.
 //!
-//! This does only implement the fields defined [in the official npm documentation](https://docs.npmjs.com/files/package.json). It is common enough that packages define custom entries that are required by various tooling.
+//! This does only implement the fields defined [in the official npm documentation](https://docs.npmjs.com/files/package.json).
+//! It is common enough that packages define custom entries that are required by
+//! various tooling.
 
 #![warn(
     missing_copy_implementations,
