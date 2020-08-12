@@ -51,6 +51,7 @@ pub struct Person {
 
 /// A reference to a person.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
+#[serde(untagged)]
 pub enum PersonReference {
     /// A short reference.
     ///
@@ -65,6 +66,7 @@ pub enum PersonReference {
 
 /// A reference to a man page.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
+#[serde(untagged)]
 pub enum ManReference {
     /// A single man page reference. Points to one single file.
     Single(String),
@@ -83,6 +85,7 @@ pub struct Repository {
 
 /// A repository reference.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
+#[serde(untagged)]
 pub enum RepositoryReference {
     /// A short reference to the repository. Has to have the syntax that `npm install` allows as well. For more information see [here](https://docs.npmjs.com/files/package.json#repository).
     Short(String),
@@ -99,8 +102,9 @@ pub struct Package {
     /// The package version.
     pub version: String,
     /// The optional package description.
-    pub desc: Option<String>,
+    pub description: Option<String>,
     /// The optional list of keywords.
+    #[serde(default)]
     pub keywords: Vec<String>,
     /// The optional package homepage.
     pub homepage: Option<String>,
@@ -111,9 +115,11 @@ pub struct Package {
     /// The optional author.
     pub author: Option<PersonReference>,
     /// The optional list of contributors.
+    #[serde(default)]
     pub contributors: Vec<PersonReference>,
     /// The optional list of files to include. Each entry defines a regex
     /// pattern.
+    #[serde(default)]
     pub files: Vec<String>,
     /// The optional package main entry file.
     pub main: Option<String>,
@@ -124,26 +130,36 @@ pub struct Package {
     /// a `nodejs` environment (like `window`).
     pub browser: Option<String>,
     /// The optional set of binary definitions.
+    #[serde(default)]
     pub bin: BinSet,
     /// The optional list of man page references.
     pub man: Option<ManReference>,
     /// The optional repository reference.
+    //#[serde(flatten)]
     pub repository: Option<RepositoryReference>,
     /// The optional list of script entries.
+    #[serde(default)]
     pub scripts: ScriptsSet,
     /// The optional list of dependencies.
+    #[serde(default)]
     pub dependencies: DepsSet,
     /// The optional list of development dependencies.
+    #[serde(default)]
     pub dev_dependencies: DepsSet,
     /// The optional list of peer dependencies.
+    #[serde(default)]
     pub peer_dependencies: DepsSet,
     /// The optional list of bundled dependencies.
+    #[serde(default)]
     pub bundled_dependencies: DepsSet,
     /// The optional list of optional dependencies.
+    #[serde(default)]
     pub optional_dependencies: DepsSet,
     /// The optional list of engine entries.
+    #[serde(default)]
     pub engines: EnginesSet,
     /// The package privacy.
+    #[serde(default)]
     pub private: bool,
     /// Other custom fields that have been defined inside the `package.json`
     /// file.
