@@ -40,6 +40,18 @@ pub struct Bug {
     pub url: Option<String>,
 }
 
+impl Bug {
+    /// Creates a new default bug.
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    /// Creates a new bug with the given values.
+    pub fn with(email: Option<String>, url: Option<String>) -> Self {
+        Self { email, url }
+    }
+}
+
 /// A person.
 #[derive(Clone, Debug, Default, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Person {
@@ -49,6 +61,26 @@ pub struct Person {
     pub email: Option<String>,
     /// The homepage of the person.
     pub url: Option<String>,
+}
+
+impl Person {
+    /// Creates a default person.
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    /// Creates a person with a given name.
+    pub fn with_name(name: String) -> Self {
+        Self {
+            name,
+            ..Default::default()
+        }
+    }
+
+    /// Creates a person with the given values.
+    pub fn with(name: String, email: Option<String>, url: Option<String>) -> Self {
+        Self { name, email, url }
+    }
 }
 
 impl fmt::Display for Person {
@@ -181,6 +213,11 @@ pub struct Package {
 }
 
 impl Package {
+    /// Creates a new default package.
+    pub fn new() -> Self {
+        Self::default()
+    }
+
     /// Deserializes a `Package` from a file path.
     pub fn from_path(path: impl AsRef<Path>) -> Result<Self> {
         let content = fs::read(path.as_ref())?;
