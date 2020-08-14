@@ -208,6 +208,9 @@ pub struct Package {
     /// The package privacy.
     #[serde(default)]
     pub private: bool,
+    /// The OS' that the package can run on.
+    #[serde(default)]
+    pub os: Vec<String>,
     /// Other custom fields that have been defined inside the `package.json`
     /// file.
     #[serde(flatten)]
