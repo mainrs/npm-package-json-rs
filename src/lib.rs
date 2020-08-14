@@ -214,6 +214,8 @@ pub struct Package {
     /// The CPU architectures that the package can run on.
     #[serde(default)]
     pub cpu: Vec<String>,
+    /// The optional config object.
+    pub config: Option<Value>,
     /// Other custom fields that have been defined inside the `package.json`
     /// file.
     #[serde(flatten)]
