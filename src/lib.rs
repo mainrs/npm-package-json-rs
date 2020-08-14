@@ -126,6 +126,8 @@ pub struct Repository {
     pub r#type: String,
     /// The url to the repository.
     pub url: String,
+    /// The directory that the repository is in. Often used for monorepos.
+    pub directory: Option<String>,
 }
 
 /// A repository reference.
