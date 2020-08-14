@@ -25,6 +25,7 @@ fn test_de_default() {
         RepositoryReference::Full(Repository {
             r#type: "git".to_string(),
             url: git_url.to_string(),
+            ..Default::default()
         })
     );
     assert!(package.keywords.is_empty());
